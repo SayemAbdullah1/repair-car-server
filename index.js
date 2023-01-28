@@ -51,8 +51,8 @@ async function run(){
             res.send(result)
         })
 
-        app.path('/orders/:id', async(req, res)=>{
-            const id = req.param.id;
+        app.patch('/orders/:id', async(req, res)=>{
+            const id = req.params.id;
             const status = req.body.status;
             const query = { _id: ObjectId(id)}
             const updatedDoc = {
